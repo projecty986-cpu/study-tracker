@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Today I Learned — Study Tracker</title>
+  <link rel="stylesheet" href="style.css" />
+  <!-- Google Font: clean and readable -->
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- ===== TOP HEADER ===== -->
+  <header class="header">
+    <div class="header-inner">
+      <div class="logo">
+        <span class="logo-dot"></span>
+        <h1>Today I Learned</h1>
+      </div>
+      <p class="tagline">Your personal study log — one day at a time.</p>
+    </div>
+  </header>
+
+  <!-- ===== MAIN CONTENT ===== -->
+  <main class="main-grid">
+
+    <!-- LEFT PANEL: Add Entry -->
+    <section class="card panel-left">
+      <h2 class="section-title">📝 Log a Study Session</h2>
+
+      <!-- Date Picker -->
+      <div class="form-group">
+        <label for="datePicker">Select Date</label>
+        <input type="date" id="datePicker" />
+        <small class="hint">You can log up to 12 months ahead.</small>
+      </div>
+
+      <!-- Item Input -->
+      <div class="form-group">
+        <label for="itemInput">What did you study?</label>
+        <div class="input-row">
+          <input type="text" id="itemInput" placeholder="e.g. Learned JavaScript arrays" />
+          <button id="addItemBtn" class="btn btn-secondary">+ Add</button>
+        </div>
+      </div>
+
+      <!-- Preview List: shows items before saving -->
+      <div id="previewSection" class="preview-section hidden">
+        <p class="preview-label">Items to save:</p>
+        <ul id="previewList" class="item-list"></ul>
+      </div>
+
+      <!-- Save Button -->
+      <button id="saveBtn" class="btn btn-primary">💾 Save to Database</button>
+
+      <!-- Status Message -->
+      <div id="statusMsg" class="status-msg hidden"></div>
+    </section>
+
+    <!-- RIGHT PANEL: View Entries -->
+    <section class="card panel-right">
+      <h2 class="section-title">📅 Your Study History</h2>
+
+      <!-- List of all saved dates -->
+      <div id="dateListSection">
+        <p class="hint">Click a date to view what you studied.</p>
+        <ul id="dateList" class="date-list">
+          <!-- Dates will be injected here by JavaScript -->
+        </ul>
+        <div id="emptyState" class="empty-state hidden">
+          <span>No entries yet. Start logging your study sessions! 🚀</span>
+        </div>
+      </div>
+
+      <!-- Divider -->
+      <hr class="divider" />
+
+      <!-- Display section: shows items for selected date -->
+      <div id="displaySection" class="display-section hidden">
+        <div class="display-header">
+          <h3 id="displayDate" class="display-date"></h3>
+          <button id="closeDisplay" class="btn-close">✕</button>
+        </div>
+        <ul id="displayList" class="item-list display-items"></ul>
+        <div id="noDataMsg" class="empty-state hidden">
+          <span>No data recorded for this date.</span>
+        </div>
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <p>Study Tracker — Built with Node.js, Express & MongoDB</p>
+  </footer>
+
+  <!-- Link the JavaScript file -->
+  <script src="script.js"></script>
+</body>
+</html>
