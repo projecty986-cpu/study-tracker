@@ -54,10 +54,6 @@ mongoose
 // Any request starting with /api/entries will go to entryRoutes
 app.use("/api", entryRoutes);
 
-// ---- Root Route (optional — just to test server is running) ----
-app.get("/", (req, res) => {
-  res.send("📚 Study Tracker API is running!");
-});
 
 // ---- Start the Server ----
 // PORT is read from .env or defaults to 5000
