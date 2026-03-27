@@ -6,7 +6,7 @@
 // ---- 1. BACKEND URL ----
 // This is where our Express server runs.
 // When you run the server with `node server.js`, it listens on port 5000.
-const API_BASE = "http://localhost:5000/api";
+const API_BASE = "/api";
 
 // ---- 2. GRAB ALL HTML ELEMENTS ----
 // We grab references to all the HTML elements we'll need to interact with.
